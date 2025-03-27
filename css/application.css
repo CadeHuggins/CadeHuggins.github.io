@@ -1,0 +1,81 @@
+/* Link custom fonts */
+@font-face {
+    font-family: 'GameFont';
+    src: url('fonts/GameFont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BodyFont';
+    src: url('fonts/BodyFont.ttf') format('truetype');
+}
+
+/* General styles */
+body {
+    font-family: 'BodyFont', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'GameFont', sans-serif;
+    color: #fff;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+section {
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #666;
+}
+
+ol {
+    margin-left: 20px;
+    list-style-type: decimal;
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: square;
+}
+
+footer {
+    background-color: #4CAF50;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.images img {
+    margin: 10px;
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
