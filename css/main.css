@@ -1,0 +1,76 @@
+/* 1. Page background */
+body {
+    background-color: #f0f8ff; /* light blue - custom hex color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 2. Image styling */
+  img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    filter: grayscale(30%);
+  }
+  
+  /* 3. h1 text styling */
+  h1 {
+    color: rgb(34, 34, 85); /* custom rgb color */
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* 4. Paragraph styling */
+  p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* 5. Links */
+  a {
+    color: hsl(200, 100%, 40%); /* custom hsl color */
+    text-decoration: none;
+  }
+  
+  /* 6. Header section */
+  header {
+    background-color: #e0e0e0;
+    padding: 10px;
+  }
+  
+  /* 7. Footer section */
+  footer {
+    background-color: #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* 8. Navigation */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+  
+  /* 9. Buttons */
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* 10. Section padding */
+  section {
+    padding: 20px;
+  }
+  
