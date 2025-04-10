@@ -7,51 +7,34 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <h1>🎣 Find the Best Fishing Resources</h1>
-  <p>Use the form below to search Google for all things fishing — techniques, guides, and more.</p>
+  <h1>🎣 Search for Fishing Tips, Guides, and Gear</h1>
+  <p>Enter a search term and optionally narrow your results by file type or fishing website.</p>
 
   <form id="fishingForm" action="https://www.google.com/search" method="GET">
-    <!-- Main search terms -->
-    <label for="baseQuery">What are you looking for?</label><br>
-    <input type="text" id="baseQuery" placeholder="e.g. bass fishing tips"><br><br>
 
-    <!-- File type dropdown -->
-    <label for="filetype">Choose file type:</label>
+    <!-- Main search -->
+    <label for="baseQuery">Search for:</label><br>
+    <input type="text" id="baseQuery" placeholder="e.g. fishing gear, fly fishing, how to catch trout" required><br><br>
+
+    <!-- File type -->
+    <label for="filetype">Optional file type:</label>
     <select id="filetype">
-      <option value="">None</option>
-      <option value="filetype:pdf">PDF (guides)</option>
-      <option value="filetype:docx">DOCX (documents)</option>
-      <option value="filetype:pptx">PPTX (presentations)</option>
+      <option value="">Any</option>
+      <option value="pdf">PDF</option>
+      <option value="docx">DOCX</option>
+      <option value="pptx">PPTX</option>
     </select><br><br>
 
-    <!-- Checkboxes for sites -->
-    <fieldset>
-      <legend>Limit search to specific fishing websites:</legend>
-      <input type="checkbox" class="site-filter" value="site:takemefishing.org" id="site1">
-      <label for="site1">takemefishing.org</label><br>
+    <!-- Specific site -->
+    <label for="site">Optional website:</label>
+    <select id="site">
+      <option value="">Any</option>
+      <option value="takemefishing.org">takemefishing.org</option>
+      <option value="fieldandstream.com">fieldandstream.com</option>
+      <option value="youtube.com">youtube.com</option>
+    </select><br><br>
 
-      <input type="checkbox" class="site-filter" value="site:fieldandstream.com" id="site2">
-      <label for="site2">fieldandstream.com</label><br>
-
-      <input type="checkbox" class="site-filter" value="site:youtube.com" id="site3">
-      <label for="site3">YouTube videos</label>
-    </fieldset><br>
-
-    <!-- Radio buttons for search focus -->
-    <fieldset>
-      <legend>Focus your search:</legend>
-      <input type="radio" name="focus" value="intitle:fishing" id="intitle" checked>
-      <label for="intitle">Search titles</label><br>
-
-      <input type="radio" name="focus" value="inurl:fishing" id="inurl">
-      <label for="inurl">Search URLs</label>
-    </fieldset><br>
-
-    <!-- Related site textarea -->
-    <label for="related">Find related sites:</label><br>
-    <textarea id="related" rows="2" cols="40">related:basspro.com</textarea><br><br>
-
-    <!-- Hidden field to send to Google -->
+    <!-- Hidden field for combined search -->
     <input type="hidden" name="q" id="finalQuery">
 
     <!-- Submit -->
@@ -62,22 +45,9 @@
     document.getElementById('fishingForm').addEventListener('submit', function(e) {
       const base = document.getElementById('baseQuery').value.trim();
       const filetype = document.getElementById('filetype').value;
-      const related = document.getElementById('related').value.trim();
+      const site = document.getElementById('site').value;
 
-      // Get selected radio
-      const focus = document.querySelector('input[name="focus"]:checked')?.value || '';
-
-      // Get checked sites
-      const siteFilters = Array.from(document.querySelectorAll('.site-filter:checked'))
-        .map(cb => cb.value)
-        .join(' ');
-
-      // Combine everything
-      const finalSearch = [base, filetype, focus, siteFilters, related]
-        .filter(part => part !== '')
-        .join(' ');
-
-      // Set final query
+      const finalSearch = [base, filetype, site].filter(Boolean).join(' ');
       document.getElementById('finalQuery').value = finalSearch;
     });
   </script>
