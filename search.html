@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="css/main.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fishing Search</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <h1>🎣 Find the Best Fishing Resources</h1>
+  <p>Use the form below to search Google for all things fishing — techniques, guides, and more.</p>
+
+  <form action="https://www.google.com/search" method="GET">
+    
+    <label for="q">What are you looking for?</label><br>
+    <input type="text" name="q" id="q" placeholder="e.g. bass fishing tips" required><br><br>
+
+    <label for="filetype">Choose file type:</label>
+    <select name="q" id="filetype">
+      <option value="filetype:pdf">PDF (guides)</option>
+      <option value="filetype:docx">DOCX (documents)</option>
+      <option value="filetype:pptx">PPTX (presentations)</option>
+    </select><br><br>
+
+    <fieldset>
+      <legend>Limit search to specific fishing websites:</legend>
+      <input type="checkbox" name="q" value="site:takemefishing.org" id="site1">
+      <label for="site1">takemefishing.org</label><br>
+
+      <input type="checkbox" name="q" value="site:fieldandstream.com" id="site2">
+      <label for="site2">fieldandstream.com</label><br>
+
+      <input type="checkbox" name="q" value="site:youtube.com" id="site3">
+      <label for="site3">YouTube videos</label>
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Focus your search:</legend>
+      <input type="radio" id="intitle" name="q" value="intitle:fishing" checked>
+      <label for="intitle">Search titles</label><br>
+
+      <input type="radio" id="inurl" name="q" value="inurl:fishing">
+      <label for="inurl">Search URLs</label>
+    </fieldset><br>
+
+    <label for="related">Find related sites:</label><br>
+    <textarea name="q" id="related" rows="2" cols="40">related:basspro.com</textarea><br><br>
+
+    <button type="submit">Search Google</button>
+  </form>
+</body>
+</html>
