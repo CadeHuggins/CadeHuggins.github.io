@@ -10,43 +10,76 @@
   <h1>🎣 Find the Best Fishing Resources</h1>
   <p>Use the form below to search Google for all things fishing — techniques, guides, and more.</p>
 
-  <form action="https://www.google.com/search" method="GET">
-    
-    <label for="q">What are you looking for?</label><br>
-    <input type="text" name="q" id="q" placeholder="e.g. bass fishing tips" required><br><br>
+  <form id="fishingForm" action="https://www.google.com/search" method="GET">
+    <!-- Main search terms -->
+    <label for="baseQuery">What are you looking for?</label><br>
+    <input type="text" id="baseQuery" placeholder="e.g. bass fishing tips"><br><br>
 
+    <!-- File type dropdown -->
     <label for="filetype">Choose file type:</label>
-    <select name="q" id="filetype">
+    <select id="filetype">
+      <option value="">None</option>
       <option value="filetype:pdf">PDF (guides)</option>
       <option value="filetype:docx">DOCX (documents)</option>
       <option value="filetype:pptx">PPTX (presentations)</option>
     </select><br><br>
 
+    <!-- Checkboxes for sites -->
     <fieldset>
       <legend>Limit search to specific fishing websites:</legend>
-      <input type="checkbox" name="q" value="site:takemefishing.org" id="site1">
+      <input type="checkbox" class="site-filter" value="site:takemefishing.org" id="site1">
       <label for="site1">takemefishing.org</label><br>
 
-      <input type="checkbox" name="q" value="site:fieldandstream.com" id="site2">
+      <input type="checkbox" class="site-filter" value="site:fieldandstream.com" id="site2">
       <label for="site2">fieldandstream.com</label><br>
 
-      <input type="checkbox" name="q" value="site:youtube.com" id="site3">
+      <input type="checkbox" class="site-filter" value="site:youtube.com" id="site3">
       <label for="site3">YouTube videos</label>
     </fieldset><br>
 
+    <!-- Radio buttons for search focus -->
     <fieldset>
       <legend>Focus your search:</legend>
-      <input type="radio" id="intitle" name="q" value="intitle:fishing" checked>
+      <input type="radio" name="focus" value="intitle:fishing" id="intitle" checked>
       <label for="intitle">Search titles</label><br>
 
-      <input type="radio" id="inurl" name="q" value="inurl:fishing">
+      <input type="radio" name="focus" value="inurl:fishing" id="inurl">
       <label for="inurl">Search URLs</label>
     </fieldset><br>
 
+    <!-- Related site textarea -->
     <label for="related">Find related sites:</label><br>
-    <textarea name="q" id="related" rows="2" cols="40">related:basspro.com</textarea><br><br>
+    <textarea id="related" rows="2" cols="40">related:basspro.com</textarea><br><br>
 
+    <!-- Hidden field to send to Google -->
+    <input type="hidden" name="q" id="finalQuery">
+
+    <!-- Submit -->
     <button type="submit">Search Google</button>
   </form>
+
+  <script>
+    document.getElementById('fishingForm').addEventListener('submit', function(e) {
+      const base = document.getElementById('baseQuery').value.trim();
+      const filetype = document.getElementById('filetype').value;
+      const related = document.getElementById('related').value.trim();
+
+      // Get selected radio
+      const focus = document.querySelector('input[name="focus"]:checked')?.value || '';
+
+      // Get checked sites
+      const siteFilters = Array.from(document.querySelectorAll('.site-filter:checked'))
+        .map(cb => cb.value)
+        .join(' ');
+
+      // Combine everything
+      const finalSearch = [base, filetype, focus, siteFilters, related]
+        .filter(part => part !== '')
+        .join(' ');
+
+      // Set final query
+      document.getElementById('finalQuery').value = finalSearch;
+    });
+  </script>
 </body>
 </html>
