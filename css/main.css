@@ -12,6 +12,7 @@ body {
     max-width: 600px;
     border-radius: 10px;
     filter: grayscale(30%);
+    height: 100px;
   }
   
   /* 3. h1 text styling */
