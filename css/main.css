@@ -8,7 +8,7 @@ body {
   
   /* 2. Image styling */
   img {
-    width: 50%;
+    width: 100px;
     max-width: 600px;
     border-radius: 10px;
     filter: grayscale(30%);
