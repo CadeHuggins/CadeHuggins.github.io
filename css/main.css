@@ -1,84 +1,118 @@
 /* 1. Page background */
 body {
-    background-color: #f0f8ff; /* light blue - custom hex color */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* 2. Image styling */
-  img {
-    width: 100px;
-    max-width: 600px;
-    border-radius: 10px;
-    filter: grayscale(30%);
-    height: 100px;
-  }
-  
-  /* 3. h1 text styling */
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 2. Image styling */
+img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  filter: grayscale(30%);
+  height: auto;
+}
+
+/* 3. h1 text styling */
+h1 {
+  color: rgb(34, 34, 85);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+
+/* 4. Paragraph styling */
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+  padding: 0 10px;
+}
+
+/* 5. Links */
+a {
+  color: hsl(200, 100%, 40%);
+  text-decoration: none;
+}
+
+/* 6. Header section */
+header {
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 7. Footer section */
+footer {
+  background-color: #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 8. Navigation */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+/* 9. Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077cc;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* 10. Section padding */
+section {
+  padding: 20px;
+}
+
+/* 11. Centered home button */
+.home-button {
+  width: 80%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* 12. Responsive text and layout */
+@media (max-width: 600px) {
   h1 {
-    color: rgb(34, 34, 85); /* custom rgb color */
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-decoration: underline;
+    font-size: 1.8rem;
   }
-  
-  /* 4. Paragraph styling */
+
   p {
-    line-height: 1.6;
-    font-size: 1rem;
-    color: #333;
+    font-size: 0.9rem;
   }
-  
-  /* 5. Links */
-  a {
-    color: hsl(200, 100%, 40%); /* custom hsl color */
-    text-decoration: none;
-  }
-  
-  /* 6. Header section */
-  header {
-    background-color: #e0e0e0;
-    padding: 10px;
-  }
-  
-  /* 7. Footer section */
-  footer {
-    background-color: #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  /* 8. Navigation */
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 15px;
-  }
-  
-  /* 9. Buttons */
+
   button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0077cc;
-    color: white;
-    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
   }
-  
-  /* 10. Section padding */
-  section {
-    padding: 20px;
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .home-button {
-    width: 120px;
-    height: auto;
-    display: block;
-    margin: 20px auto; /* centers the button */
+    width: 90%;
   }
-  
+}
