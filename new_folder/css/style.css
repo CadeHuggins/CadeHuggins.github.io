@@ -4,62 +4,66 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
+  font-size: 4vw; /* scales text */
 }
 
 header {
   background-color: #2c3e50;
   color: white;
-  padding: 20px;
+  padding: 5vw;
   text-align: center;
 }
 
 #profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 30vw;
+  height: 30vw;
   border-radius: 50%;
-  margin: 10px 0;
+  margin: 2vw 0;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 4vw;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 3.5vw;
 }
 
 main {
-  padding: 20px;
+  padding: 4vw;
 }
 
 section {
   background: white;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 800px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 5vw auto;
+  padding: 4vw;
+  border-radius: 2vw;
+  max-width: 90vw;
+  box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.1);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  font-size: 3.5vw;
 }
 
 table, th, td {
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 2vw;
 }
 
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 4vw;
   background-color: #ddd;
+  font-size: 3vw;
 }
